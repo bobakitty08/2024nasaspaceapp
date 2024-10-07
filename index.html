@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar System Orrery</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    #title {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 24px;
+      color: #ffffff;
+      z-index: 10;
+    }
+    #controls {
+      position: absolute;
+      top: 50px;
+      left: 10px;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 5px;
+      z-index: 10;
+    }
+    #factsButton {
+      position: absolute;
+      top: 50px;
+      right: 10px;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 10;
+    }
+    #chart {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      display: none;
+      z-index: 20;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      overflow-y: auto;
+    }
+    #closeChart {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="title">Orrery Web App</h1>
+
+  <div id="controls">
+    <label>
+      Zoom: 
+      <input type="range" id="zoomControl" min="50" max="200" value="100">
+    </label>
+  </div>
+
+  <button id="factsButton">View Planet Facts</button>
+
+  <div id="chart">
+    <button id="closeChart">Close</button>
+    <h2>Planet Facts</h2>
+    <table>
+      <tr>
+        <th>Planet</th>
+        <th>Diameter (km)</th>
+        <th>Distance from Sun (AU)</th>
+        <th>Orbital Period (Earth years)</th>
+        <th>Moons</th>
+      </tr>
+      <tr>
+        <td>Mercury</td>
+        <td>4,880</td>
+        <td>0.39</td>
+        <td>0.24</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Venus</td>
+        <td>12,104</td>
+        <td>0.72</td>
+        <td>0.615</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Earth</td>
+        <td>12,742</td>
+        <td>1.0</td>
+        <td>1.0</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>Mars</td>
+        <td>6,779</td>
+        <td>1.52</td>
+        <td>1.88</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>Jupiter</td>
+        <td>139,822</td>
+        <td>5.20</td>
+        <td>11.86</td>
+        <td>79</td>
+      </tr>
+      <tr>
+        <td>Saturn</td>
+        <td>116,464</td>
+        <td>9.58</td>
+        <td>29.46</td>
+        <td>82</td>
+      </tr>
+      <tr>
+        <td>Uranus</td>
+        <td>50,724</td>
+        <td>19.22</td>
+        <td>84.01</td>
+        <td>27</td>
+      </tr>
+      <tr>
+        <td>Neptune</td>
+        <td>49,244</td>
+        <td>30.07</td>
+        <td>164.8</td>
+        <td>14</td>
+      </tr>
+    </table>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/js/controls/OrbitControls.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
